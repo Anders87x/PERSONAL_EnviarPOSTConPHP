@@ -94,7 +94,7 @@
 
         public function insert_factura()
         {
-            $url = "https://localhost:44351/api/values/";    
+            $url = "http://192.168.18.201:9096/api/values";    
             $data = array(
                 "tico_Id" => 1,
                 "mone_Id" => 2,

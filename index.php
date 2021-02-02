@@ -16,10 +16,6 @@
             </form>
 
             <form>
-                <button type="button" id="btnenviarfactura" class="btn btn-primary">Enviar Factura</button>
-            </form>
-
-            <form>
                 <button type="button" id="btnenviarfacturaservicio" class="btn btn-primary">Enviar Factura Servicio</button>
             </form>
         </div>
