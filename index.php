@@ -14,6 +14,14 @@
                 </div>
                 <button type="button" id="btnenviar" class="btn btn-primary">Enviar</button>
             </form>
+
+            <form>
+                <button type="button" id="btnenviarfactura" class="btn btn-primary">Enviar Factura</button>
+            </form>
+
+            <form>
+                <button type="button" id="btnenviarfacturaservicio" class="btn btn-primary">Enviar Factura Servicio</button>
+            </form>
         </div>
     </body>
     <script src="https://code.jquery.com/jquery-3.3.1.js" ></script>

@@ -9,5 +9,10 @@
             echo $datos;
         break;
 
+        case "guardar_factura":
+            $datos=$servicio->insert_factura();
+            echo $datos;
+        break;
+
     }
 ?>
