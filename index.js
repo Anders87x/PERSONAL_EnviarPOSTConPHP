@@ -12,3 +12,9 @@ $(document).on("click","#btnenviarfacturaservicio", function(){
         console.log(data);
     });
 });
+
+$(document).on("click","#btncrearoperacionsap", function(){
+    $.post("controller/servicio.php?op=insert_operacion_sap", function(data){
+        console.log(data);
+    });
+});

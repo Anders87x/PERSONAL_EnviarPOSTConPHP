@@ -18,6 +18,10 @@
             <form>
                 <button type="button" id="btnenviarfacturaservicio" class="btn btn-primary">Enviar Factura Servicio</button>
             </form>
+
+            <form>
+                <button type="button" id="btncrearoperacionsap" class="btn btn-primary">Operación SAP</button>
+            </form>
         </div>
     </body>
     <script src="https://code.jquery.com/jquery-3.3.1.js" ></script>

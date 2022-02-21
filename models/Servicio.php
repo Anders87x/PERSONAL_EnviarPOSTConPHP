@@ -87,7 +87,7 @@
             if ( $status != 201 ) {
                 die($json_response);
             }
-            
+
             curl_close($curl);
             $response = json_decode($json_response, true);
         }
@@ -132,6 +132,87 @@
                     array("Content-type: application/json"));
             curl_setopt($curl, CURLOPT_POST, true);
             curl_setopt($curl, CURLOPT_POSTFIELDS, $payload);
+            $json_response = curl_exec($curl);
+            $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+            if ( $status != 201 ) {
+                die($json_response);
+            }
+            
+            curl_close($curl);
+            $response = json_decode($json_response, true);
+        }
+
+        public function insert_operacion_sap()
+        {
+            $url = "http://169.47.240.198:8077/Api/Proyecto";    
+            $data = "
+            {
+                'PrjCode': 'OP2221022102Ser639',
+                'PrjName': 'OP2221022102Ser639',
+                'ValidFrom': '2022-02-21',
+                'ValidTo': '2022-02-21',
+                'Active': 'Y',
+                'ObjCamposPersonalizados': [
+                  {
+                    'Tipo': 'string',
+                    'Nombre': 'U_SYP_OcrCode',
+                    'Valor': 'LN000001',
+                    'Procesar': 'Y'
+                  },
+                  {
+                    'Tipo': 'string',
+                    'Nombre': 'U_SYP_OcrCode2',
+                    'Valor': 'UNFP0003',
+                    'Procesar': 'Y'
+                  },
+                  {
+                    'Tipo': 'string',
+                    'Nombre': 'U_SYP_OcrCode3',
+                    'Valor': 'SEFP0002',
+                    'Procesar': 'Y'
+                  },
+                  {
+                    'Tipo': 'string',
+                    'Nombre': 'U_SYP_OcrCode4',
+                    'Valor': 'SEFP0001',
+                    'Procesar': 'Y'
+                  },
+                  {
+                    'Tipo': 'string',
+                    'Nombre': 'U_SYP_OcrCode5',
+                    'Valor': 'SEDE0004',
+                    'Procesar': 'Y'
+                  },
+                  {
+                    'Tipo': 'string',
+                    'Nombre': 'U_NOMBASESAP',
+                    'Valor': 'B1H_TRANS_PRUEBAS',
+                    'Procesar': 'Y'
+                  },
+                  {
+                    'Tipo': 'string',
+                    'Nombre': 'U_IDSISTEMACORE',
+                    'Valor': 'FPK',
+                    'Procesar': 'Y'
+                  },
+                  {
+                    'Tipo': 'string',
+                    'Nombre': 'U_FECHAZARPE',
+                    'Valor': '2022-02-21',
+                    'Procesar': 'Y'
+                  }
+                ]
+              }
+            ";
+            $payload = json_encode($data);
+            $curl = curl_init($url);
+            curl_setopt($curl, CURLOPT_HEADER, false);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_HTTPHEADER,
+                    array("Content-type: application/json"));
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
             $json_response = curl_exec($curl);
             $status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
 

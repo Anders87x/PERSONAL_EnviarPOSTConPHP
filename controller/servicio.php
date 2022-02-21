@@ -14,5 +14,10 @@
             echo $datos;
         break;
 
+        case "insert_operacion_sap":
+            $datos=$servicio->insert_operacion_sap();
+            echo $datos;
+        break;
+
     }
 ?>
